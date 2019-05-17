@@ -597,8 +597,8 @@ a:focus {
 .hero-bg-2 {
   background-color: #F4F7FC;
   background-image: url(../img/slide/2.jpg);
-  animation: backgroundScroll 16s linear infinite;
-  transform-origin: center center;
+  /* animation: backgroundScroll 16s linear infinite;
+  transform-origin: center center; */
 }
 
 .hero-bg-3 {
@@ -1883,6 +1883,12 @@ a:focus {
 .our-sponsers-area-tow .single-sponsers {
   margin-bottom: 80px;
 }
+  .our-sponsers-area-tow .single-sponsers img {
+      max-height: 184px;
+      width: 100%;
+      height: auto;
+  }
+
 
 .our-sponsers-area-tow .sponsers-active .owl-nav div {
   position: absolute;
