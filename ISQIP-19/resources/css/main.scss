@@ -1,3 +1,10 @@
+// VARIABLES //
+$content-font: 'Montserrat', sans-serif;
+$menu-font: 'Raleway', sans-serif;
+
+
+
+
 *{
     margin: 0%;
     padding: 0%;
@@ -6,8 +13,6 @@
         color: #000000;
     }
 }
-
-
 
 body{
     background: url('../images/background/bg.png');
@@ -21,7 +26,7 @@ body{
             top: 40%;
             h1{
                 font-size: 4em;
-                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-family: $content-font;
             }
             small{
                 font-size: 1em;
@@ -51,7 +56,7 @@ body{
                 z-index: 0;
                 text-align: center;
                 font-size: 1.5em;
-                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-family: $menu-font;
                 div.selected{
                     position: absolute;
                     right: 0px;
@@ -59,7 +64,7 @@ body{
                     transform: translateY(-50%);
                     background: #F0F2FE;
                     height: 30px;
-                    width: 220px;
+                    width: 112%;
                     z-index: -1;
                     padding: 20px;
                     box-shadow: 1px 1px 6px #b9b7b7;

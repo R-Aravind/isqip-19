@@ -20,7 +20,7 @@ body section.content-side div.banner {
 
 body section.content-side div.banner h1 {
   font-size: 4em;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 body section.content-side div.banner small {
@@ -53,7 +53,7 @@ body section.sidebar ul.menu li {
   z-index: 0;
   text-align: center;
   font-size: 1.5em;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 body section.sidebar ul.menu li div.selected {
@@ -64,7 +64,7 @@ body section.sidebar ul.menu li div.selected {
           transform: translateY(-50%);
   background: #F0F2FE;
   height: 30px;
-  width: 220px;
+  width: 112%;
   z-index: -1;
   padding: 20px;
   -webkit-box-shadow: 1px 1px 6px #b9b7b7;
