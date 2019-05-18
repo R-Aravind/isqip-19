@@ -3227,8 +3227,20 @@ a.primary-btn2 img {
   box-shadow: 0px 0px 35px 0px rgba(26, 13, 13, 0.24);
 }
 
+@media (max-width: 991px) {
+  .navbar-nav {
+    background: #e43d12;
+  }
+  .nav-link {
+    color: white !important;
+  }
+  .nav-link:hover {
+    color: black !important;
+  }
+}
 
-.navbar.navbar-expand-lg {
-/*   background: #e43d12; */
-/*   color: white; */
+@media (max-width: 1199px) {
+  .header-ticket {
+    font-size: 0.83rem;
+  }
 }
