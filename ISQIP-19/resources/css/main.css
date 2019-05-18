@@ -30,30 +30,50 @@ body section.content-side div.banner small {
 body section.sidebar {
   background: white;
   height: 100vh;
+  -webkit-box-shadow: -1px 1px 6px #b9b7b7;
+          box-shadow: -1px 1px 6px #b9b7b7;
 }
 
 body section.sidebar img.logo {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  margin-top: 2em;
+  margin-top: 12%;
   width: 120px;
 }
 
 body section.sidebar ul.menu {
   list-style: none;
-  margin-top: 7em;
+  margin-top: 40%;
 }
 
 body section.sidebar ul.menu li {
-  padding: 12px;
+  position: relative;
+  padding: 5%;
+  z-index: 0;
   text-align: center;
   font-size: 1.5em;
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
+body section.sidebar ul.menu li div.selected {
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: #F0F2FE;
+  height: 30px;
+  width: 220px;
+  z-index: -1;
+  padding: 20px;
+  -webkit-box-shadow: 1px 1px 6px #b9b7b7;
+          box-shadow: 1px 1px 6px #b9b7b7;
+}
+
 body section.sidebar ul.menu li.ticket a {
   color: #e5451c;
+  z-index: 1;
 }
 
 body section.sidebar ul.menu .acitve {
