@@ -747,6 +747,7 @@ a:focus {
 
 .header .navbar-toggler-icon {
   background-color: #01292f;
+  color: white;
 }
 
 .header .navbar-toggler {
@@ -755,7 +756,7 @@ a:focus {
   padding: 6 10px;
   position: absolute;
   right: 0;
-  top: -78px;
+  top: -50px;
 }
 
 .header .brand-logo {
@@ -3224,4 +3225,10 @@ a.primary-btn2 img {
 
 .info-row:hover {
   box-shadow: 0px 0px 35px 0px rgba(26, 13, 13, 0.24);
+}
+
+
+.navbar.navbar-expand-lg {
+/*   background: #e43d12; */
+/*   color: white; */
 }
