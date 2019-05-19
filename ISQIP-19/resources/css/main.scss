@@ -1,10 +1,26 @@
+// CONTENTS //
+/*
+    VARIABLES
+    RESET DEFAULTS
+    CONTENT SIDE
+    SIDE BAR
+
+    <-MOBILE VERSION->
+        MOBILE TOP BAR
+        MOBILE CONTENT SIDE
+        MOBILE SIDE BAR
+
+*/
+/////////////
+
 // VARIABLES //
 $content-font: 'Montserrat', sans-serif;
 $menu-font: 'Raleway', sans-serif;
+$mobile-width: 575.98px;
+$primary-color: #e5451c;
 
 
-
-
+// RESET DEFAULTS
 *{
     margin: 0%;
     padding: 0%;
@@ -12,10 +28,19 @@ $menu-font: 'Raleway', sans-serif;
         text-decoration: none;
         color: #000000;
     }
+    // color: green;
+    // outline: 1px solid red;
+    // background: black;
 }
+
 
 body{
     background: url('../images/background/bg.png');
+
+    // MOBILE TOP BAR //
+    section.mob-topbar{
+        display: none;
+    }
 
     // CONTENT SIDE //
     section.content-side{
@@ -27,9 +52,13 @@ body{
             h1{
                 font-size: 4em;
                 font-family: $content-font;
+                font-weight: bold;
             }
             small{
                 font-size: 1em;
+            }
+            div.mob-ticket-btn{
+                display: none;
             }
         }
 
@@ -71,11 +100,93 @@ body{
                 }
             }
             li.ticket a{
-                color: #e5451c;
+                color: $primary-color;
                 z-index: 1;
+                font-weight: bold;
             }
-            .acitve{
-                border: 3px solid red;
+        }
+    }
+}
+
+// MOBILE VERSION //
+@media only screen and (max-width: $mobile-width){
+    body{
+
+        // MOBILE TOP BAR //
+        section.mob-topbar{
+            display: inline-block;
+            margin-top: 20px;
+            margin-left: 30px;
+            opacity: 1;
+            transition: opacity 0.3s;
+            img.mob-icon{
+                width: 180px;
+            }
+            div.mob-sidebar-btn{
+                float:right;
+                position: absolute;
+                right: -1px;
+                top: 25px;
+                padding-top: 5px;
+                padding-left: 7px;
+                padding-right: 30px;
+                padding-bottom: 0px;
+                font-size: 1.8em;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 15px #b9b7b7;
+                color: $primary-color;
+            }
+        }
+        
+        // MOBILE CONTENT SIDE //
+        section.content-side{
+            opacity: 1;
+            transition: opacity 0.3s;
+            padding-left: 0%;
+            padding-right: 0%;
+            div.banner{
+                top: 25vh;
+                h1{
+                    font-size: 1.8em;
+                    font-family: $content-font;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
+                small{
+                    font-size: 0.9em;
+                }
+                div.mob-ticket-btn{
+                    display: block;
+                    margin-top: 35vh;
+                    width: 100%;
+                    background: $primary-color;
+                    padding-top: 15px;
+                    padding-bottom: 15px;
+                    font-size: 0.9em;
+                    font-family: $menu-font;
+                    font-weight:bold;
+                    a, a:visited, a:active, a:hover{
+                        color: #FFFFFF;
+                    }
+                }
+            }
+
+        }
+
+        // MOBILE SIDE BAR //
+        section.sidebar{
+            position: absolute; 
+            z-index: 1;
+            width: 250px;
+            right: -1px;
+            font-size: 1.2em;
+            display: none;
+            img.logo{
+                margin-top: 20%;
+            }
+            
+            ul.menu{
+                margin-top: 65%;
             }
         }
     }
