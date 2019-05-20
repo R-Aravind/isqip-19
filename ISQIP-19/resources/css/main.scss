@@ -147,6 +147,7 @@ body{
             padding-right: 0%;
             div.banner{
                 top: 25vh;
+                max-height: 80vh;
                 h1{
                     font-size: 1.8em;
                     font-family: $content-font;
@@ -187,7 +188,7 @@ body{
             }
             
             ul.menu{
-                margin-top: 65%;
+                margin-top: 30%;
             }
         }
     }

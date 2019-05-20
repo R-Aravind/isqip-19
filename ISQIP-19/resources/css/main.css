@@ -135,6 +135,7 @@ body section.sidebar ul.menu li.ticket a {
   }
   body section.content-side div.banner {
     top: 25vh;
+    max-height: 80vh;
   }
   body section.content-side div.banner h1 {
     font-size: 1.8em;
@@ -171,7 +172,7 @@ body section.sidebar ul.menu li.ticket a {
     margin-top: 20%;
   }
   body section.sidebar ul.menu {
-    margin-top: 65%;
+    margin-top: 30%;
   }
 }
 /*# sourceMappingURL=main.css.map */
