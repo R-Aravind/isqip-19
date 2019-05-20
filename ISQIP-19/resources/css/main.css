@@ -43,6 +43,8 @@ body section.content-side div.banner h1 {
 
 body section.content-side div.banner small {
   font-size: 1em;
+  font-family: "montserrat", sans-serif;
+  font-weight: 600;
 }
 
 body section.content-side div.banner div.mob-ticket-btn {
@@ -133,10 +135,6 @@ body section.sidebar ul.menu li.ticket a {
     padding-left: 0%;
     padding-right: 0%;
   }
-  body section.content-side div.banner {
-    top: 25vh;
-    max-height: 80vh;
-  }
   body section.content-side div.banner h1 {
     font-size: 1.8em;
     font-family: "Montserrat", sans-serif;
@@ -148,7 +146,6 @@ body section.sidebar ul.menu li.ticket a {
   }
   body section.content-side div.banner div.mob-ticket-btn {
     display: block;
-    margin-top: 35vh;
     width: 100%;
     background: #e5451c;
     padding-top: 15px;
