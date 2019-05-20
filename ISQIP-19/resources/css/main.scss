@@ -49,6 +49,7 @@ body{
             text-align: center;
             position: relative;
             top: 40%;
+            max-height: 100vh;
             h1{
                 font-size: 4em;
                 font-family: $content-font;
@@ -78,7 +79,7 @@ body{
         }
         ul.menu{
             list-style: none;
-            margin-top: 40%;
+            margin-top: 35%;
             li{
                 position: relative;
                 padding: 5%;
