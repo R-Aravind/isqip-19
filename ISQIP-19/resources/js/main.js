@@ -1,4 +1,13 @@
 
+// Router
+window.onload = ()=> Route({
+    '': 'banner.html',
+    '/contact': 'contact.html',
+    '/faq': 'faq.html',
+    '/isqip': 'isqip.html',
+    '/ticket': 'ticket.html',
+});
+/////
 
 
 // SIDE BAR MOBILE

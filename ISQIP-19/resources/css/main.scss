@@ -148,7 +148,7 @@ body{
             padding-left: 0%;
             padding-right: 0%;
             div.banner{
-                // top: 25vh;
+                top: 25vh;
                 h1{
                     font-size: 1.8em;
                     font-family: $content-font;
@@ -160,7 +160,7 @@ body{
                 }
                 div.mob-ticket-btn{
                     display: block;
-                    // margin-top: ;
+                    margin-top: 20vh;
                     
                     width: 100%;
                     background: $primary-color;
