@@ -11,6 +11,10 @@ window.onload = ()=> Route({
     '/path2': 'pathname2.html',
     '': index.html
 });
+
+we can define title of each page like this
+<page-title>TITLE</page-title>
+
 ***********/
 ///////////
 
@@ -67,3 +71,14 @@ let Route = function(paths){
     window.onhashchange = ()=> pageLoader(); //render page on every url change 
 
 };
+
+// <page-title> tag definition
+class PageTitle extends HTMLElement{
+    constructor(){super();
+        this.style.display = 'none';
+    }
+    connectedCallback() {
+        document.title = this.innerHTML;
+    }
+}
+window.customElements.define('page-title', PageTitle);
