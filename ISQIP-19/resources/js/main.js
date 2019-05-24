@@ -3,7 +3,7 @@
 window.onload = ()=> Route({
     '': 'banner.html',
     '/contact': 'contact.html',
-    '/faq': 'faq.html',
+    '/faq': 'faq-new.html',
     '/isqip': 'isqip.html',
     '/ticket': 'ticket.html',
 });
