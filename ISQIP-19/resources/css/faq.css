@@ -1,3 +1,4 @@
+
 .faq-body{
     background: #FFFFFF;
     width: 90%;
@@ -9,10 +10,15 @@
     padding: 20px;
     font-family: "Montserrat", sans-serif;
     font-weight: 600;
-    -webkit-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
-    -moz-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
-    box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
+    border-radius: 20px;
 }
+
+.faq-body:hover {
+    -webkit-box-shadow: 0px 0px 27px -9px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 27px -9px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 27px -9px rgba(0,0,0,0.3);
+}
+
 
 .faq-set{
     padding: 8px;
