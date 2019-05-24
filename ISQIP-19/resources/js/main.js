@@ -51,7 +51,16 @@ $(document).mouseup(function (e) {
         }
     }
 });
-
-
-
 /////////////
+
+
+//Page Scripts //
+let pageScript = () => {
+
+    // FAQ PAGE
+    $('.faq-question').click(function (){
+
+        $(this).next('.faq-answer').fadeToggle(); 
+    });
+};
+////////////////
