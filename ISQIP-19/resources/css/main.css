@@ -110,7 +110,7 @@ body section.sidebar ul.menu li div.selected {
 body section.sidebar ul.menu li.ticket a {
     color: #e5451c;
     z-index: 1;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 @media only screen and (max-width: 575.98px) {
