@@ -1,0 +1,65 @@
+.branches{
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 6vh;
+}
+.branch-card{
+    background: #FFFFFF;
+    margin:6%;
+    height: 15vw;
+    position: relative;
+    padding: 0%;
+    font-family: "Raleway", sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    border-radius: 10px;
+    -webkit-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
+    -moz-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
+    box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
+    
+}
+
+.card-label{
+    position: absolute;
+    bottom: 4%;
+    color: #242424;
+    width: 100%;
+    text-align: center;
+}
+
+@media only screen and (max-width: 1000px) {
+    .branches{
+        margin-top: 10vh;
+    }   
+}
+
+@media only screen and (max-width: 575.98px) {
+    .branches{
+        width: 100%;
+        margin: 0 auto;
+        margin-top: 7vh;
+    }
+    .branch-card{
+        background: #FFFFFF;
+        margin:12px;
+        height: 180px;
+        position: relative;
+        padding: 0%;
+        font-family: "Raleway", sans-serif;
+        font-weight: bold;
+        font-size: 1.5em;
+        border-radius: 10px;
+        -webkit-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
+        -moz-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
+        box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
+    }
+    
+    .card-label{
+        position: absolute;
+        bottom: 4%;
+        color: #242424;
+        width: 100%;
+        text-align: center;
+    }
+        
+}
