@@ -1,7 +1,14 @@
+.container {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
 .branches{
+    display: flex;
     width: 60%;
-    margin: 0 auto;
-    margin-top: 6vh;
 }
 .branch-card{
     background: #FFFFFF;
@@ -13,10 +20,12 @@
     font-weight: 600;
     font-size: 2em;
     border-radius: 10px;
-    -webkit-box-shadow: 19px 19px 27px -9px rgba(0,0,0,0.1);
-    -moz-box-shadow: 19px 19px 27px -9px rgba(0,0,0,0.1);
-    box-shadow: 19px 19px 27px -9px rgba(0,0,0,0.1);
-    
+}
+
+.branch-card:hover {
+    -webkit-box-shadow: 0px 0px 27px -9px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 27px -9px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 27px -9px rgba(0,0,0,0.3);
 }
 
 .card-label{
@@ -34,10 +43,15 @@
 }
 
 @media only screen and (max-width: 575.98px) {
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
     .branches{
         width: 100%;
-        margin: 0 auto;
-        margin-top: 7vh;
     }
     .branch-card{
         background: #FFFFFF;
@@ -49,9 +63,6 @@
         font-weight: bold;
         font-size: 1.5em;
         border-radius: 10px;
-        -webkit-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
-        -moz-box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
-        box-shadow: 8px 8px 30px -7px rgba(185,183,183,0.67);
     }
     
     .card-label{
