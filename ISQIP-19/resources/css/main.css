@@ -87,16 +87,17 @@ body section.sidebar img.logo {
     margin-left: auto;
     margin-right: auto;
     display: block;
-    margin-top: 12%;
+    margin-top: 11vh;
     width: 120px;
 }
 
 body section.sidebar ul.menu {
+    height: 85vh;
     list-style: none;
     display: flex;
     flex-direction: column;
-    margin-top: 35%;
     justify-content: center;
+    align-content: center;
 }
 
 body section.sidebar ul.menu li {
