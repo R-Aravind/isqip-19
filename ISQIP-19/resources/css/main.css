@@ -50,10 +50,11 @@ body section.mob-topbar {
 
 /* body Banner */
 body section.content-side div.banner {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
     text-align: center;
-    position: relative;
-    top: 40%;
-    max-height: 100vh;
+    justify-content: center;
 }
 
 body section.content-side div.banner h1 {
