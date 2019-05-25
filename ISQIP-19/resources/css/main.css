@@ -1,6 +1,6 @@
 /* COLOR PALETTE
 blackish: #242424
-orangeish: #e5451c 
+orangeish: #e5451c
 */
 
 /* CONTENTS
@@ -39,7 +39,6 @@ page-title{
     color: #242424;
 }
 
-<<<<<<< HEAD
 /* screen reader only content class */
 .sr-only {
     position: absolute;
@@ -56,9 +55,7 @@ page-title{
     outline: 0;
 }
 
-=======
 /* Body */
->>>>>>> ae79cdadadbb9d1b2a629c6b5986a0c8170792b3
 body {
     background: url("../images/background/bg.png");
 }

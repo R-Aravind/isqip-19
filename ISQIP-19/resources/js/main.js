@@ -65,6 +65,7 @@ let pageScript = () => { // FAQ PAGE
     // var contactBtn = $('.contact-btn');
 
     $('.contact-btn').click(function () {
+        console.log('yes it fires');
         // text curtain reveal animation
         textCurtains = document.getElementsByClassName('text-reveal-curtain');
         textToReveal = document.getElementsByClassName('text-to-reveal');
