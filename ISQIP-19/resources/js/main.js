@@ -93,8 +93,10 @@ let pageScript = () => { // FAQ PAGE
         targets: textCurtains,
         scaleX: [1, 0]
     });
+    $('.contact-container').ready(function(){
+        textCurtainEffect.play();
+    });
     
-    textCurtainEffect.play();
 
     // FAQ PAGE
 
