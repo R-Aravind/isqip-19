@@ -64,36 +64,38 @@ let pageScript = () => { // FAQ PAGE
      */
     // var contactBtn = $('.contact-btn');
 
-    $('.contact-btn').click(function () {
-        console.log('yes it fires');
-        // text curtain reveal animation
-        textCurtains = document.getElementsByClassName('text-reveal-curtain');
-        textToReveal = document.getElementsByClassName('text-to-reveal');
-        textCurtainEffect = anime.timeline({
-            easing: 'easeInOutSine',
-            duration: 100,
-            delay: anime.stagger(50),
-            endDelay: 50,
-            autoplay: false
-        });
-
-        textCurtainEffect
-        .add({
-            targets: textCurtains,
-            scaleX: [0, 1],
-            direction: 'alternate',
-            complete: function () {
-                for (var i = 0; i < textToReveal.length; ++ i) {
-                    textToReveal[i].classList.toggle('make-invisible');
-                    textCurtains[i].style.transformOrigin = 'right';
-                }
-            }
-        })
-        .add({
-            targets: textCurtains,
-            scaleX: [1, 0]
-        });
+    
+    console.log('yes it fires');
+    // text curtain reveal animation
+    textCurtains = document.getElementsByClassName('text-reveal-curtain');
+    textToReveal = document.getElementsByClassName('text-to-reveal');
+    textCurtainEffect = anime.timeline({
+        easing: 'easeInOutSine',
+        duration: 100,
+        delay: anime.stagger(50),
+        endDelay: 50,
+        autoplay: false
     });
+
+    textCurtainEffect
+    .add({
+        targets: textCurtains,
+        scaleX: [0, 1],
+        direction: 'alternate',
+        complete: function () {
+            for (var i = 0; i < textToReveal.length; ++ i) {
+                textToReveal[i].classList.toggle('make-invisible');
+                textCurtains[i].style.transformOrigin = 'right';
+            }
+        }
+    })
+    .add({
+        targets: textCurtains,
+        scaleX: [1, 0]
+    });
+    
+    textCurtainEffect.play();
+
     // FAQ PAGE
 
     // PAGINATION
