@@ -92,7 +92,7 @@ let pageScript = () => { // FAQ PAGE
             targets: textCurtains,
             scaleX: [1, 0]
         });
-
+    });
     // FAQ PAGE
 
     // PAGINATION
