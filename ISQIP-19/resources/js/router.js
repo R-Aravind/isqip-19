@@ -4,6 +4,9 @@
 let update_id = 'main';
 
 ////////////
+
+
+
 /**********
 set paths like this
 window.onload = ()=> Route({
@@ -14,6 +17,8 @@ window.onload = ()=> Route({
 
 we can define title of each page like this
 <page-title>TITLE</page-title>
+
+define pageScript() function for providing scripts for the rendered contents(pages)
 
 ***********/
 ///////////
