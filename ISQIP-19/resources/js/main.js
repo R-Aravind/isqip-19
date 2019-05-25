@@ -57,10 +57,24 @@ $(document).mouseup(function (e) {
 //Page Scripts //
 let pageScript = () => {
 
-    // FAQ PAGE
-    $('.faq-question').click(function (){
 
-        $(this).next('.faq-answer').fadeToggle(); 
+    // FAQ PAGE
+
+    let crt_faq_page = 0;
+    let total_page = $('.page').length;
+
+    $('.page').hide();
+    $(`.page:eq(${crt_faq_page})`).show();
+
+    $('#faq-btn-next').click(()=>{
+        $('.page').hide();
+        crt_faq_page += 1;
+        $(`.page:eq(${crt_faq_page})`).show();
+    });
+    $('#faq-btn-prev').click(()=>{
+        $('.page').hide();
+        crt_faq_page -= 1;
+        $(`.page:eq(${crt_faq_page})`).show();
     });
 };
 ////////////////

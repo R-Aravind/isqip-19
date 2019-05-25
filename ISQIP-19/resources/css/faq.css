@@ -56,6 +56,23 @@ main {
     padding-right: 20px;
   }
 
+  div.faq-btn {
+    text-align: center;
+    margin-top: 20px;
+  }
+  div.faq-btn div a{
+    background-color: #e5451c;
+    color: white;
+    text-decoration: none;
+    padding: 10px 50px;
+  }
+  .disabled{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 10px 50px;
+  }
+
   @media only screen and (max-width: 480px) {
     .question {
       padding-right: 0px;
