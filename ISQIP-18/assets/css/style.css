@@ -747,7 +747,6 @@ a:focus {
 
 .header .navbar-toggler-icon {
   background-color: #01292f;
-  color: white;
 }
 
 .header .navbar-toggler {
@@ -756,7 +755,7 @@ a:focus {
   padding: 6 10px;
   position: absolute;
   right: 0;
-  top: -50px;
+  top: -78px;
 }
 
 .header .brand-logo {
@@ -3225,22 +3224,4 @@ a.primary-btn2 img {
 
 .info-row:hover {
   box-shadow: 0px 0px 35px 0px rgba(26, 13, 13, 0.24);
-}
-
-@media (max-width: 991px) {
-  .navbar-nav {
-    background: #e43d12;
-  }
-  .nav-link {
-    color: white !important;
-  }
-  .nav-link:hover {
-    color: black !important;
-  }
-}
-
-@media (max-width: 1199px) {
-  .header-ticket {
-    font-size: 0.83rem;
-  }
 }

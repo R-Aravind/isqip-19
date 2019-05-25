@@ -23,15 +23,15 @@ $(document).ready(() => {
     // side bar active change
     $(window).on('hashchange load', () => {
         let currentPage = window.location.hash.substring(1).slice(1);
-        if (currentPage == '') {
+        if(currentPage != ''){
+            $('.menu li').removeClass('active');
+            $('.menu li div.selected').remove();
+            currentPage ='.' + currentPage + '-btn';
+            $(currentPage).append('<div class="selected"></div>');
+        }else{
             $('.menu li').removeClass('active');
             $('.menu li div.selected').remove();
             $('.home-btn').append('<div class="selected"></div>');
-        } else {
-            $('.menu li').removeClass('active');
-            $('.menu li div.selected').remove();
-            currentPage = '.' + currentPage + '-btn';
-            $(currentPage).append('<div class="selected"></div>');
         }
     });
 
@@ -92,6 +92,36 @@ let pageScript = () => { // FAQ PAGE
             targets: textCurtains,
             scaleX: [1, 0]
         });
+
+    // FAQ PAGE
+
+    // PAGINATION
+    let crt_faq_page = 0;
+    let total_page = $('.page').length;
+    let pageNumber = function(crt, tot){
+        return `${crt+1}\\${tot}`;
+    }
+
+    $('.page').hide();
+    $(`.page:eq(${crt_faq_page})`).show();
+    $('.page-number').text(pageNumber(crt_faq_page, total_page));
+
+    $('#faq-btn-next').click(()=>{
+        $('.page').hide();
+        crt_faq_page += 1;
+        if(crt_faq_page == total_page){crt_faq_page = 0;}
+        $(`.page:eq(${crt_faq_page})`).show();
+        $('.page-number').text(pageNumber(crt_faq_page, total_page));
     });
+    $('#faq-btn-prev').click(()=>{
+        $('.page').hide();
+        if(crt_faq_page == 0){crt_faq_page = total_page;}
+        crt_faq_page -= 1;
+        $(`.page:eq(${crt_faq_page})`).show();
+        $('.page-number').text(pageNumber(crt_faq_page, total_page));
+    });
+
+
+
 };
 // //////////////
