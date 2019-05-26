@@ -101,6 +101,7 @@ body section.sidebar {
     height: 100vh;
     -webkit-box-shadow: -1px 1px 6px #b9b7b7;
     box-shadow: -1px 1px 6px #b9b7b7;
+    height: 100vh;
 }
 
 body section.sidebar img.logo {
@@ -263,12 +264,13 @@ div.overlay{
         right: -1px;
         font-size: 1.2em;
         display: none;
+        height: 100vh;
     }
     body section.sidebar img.logo {
         margin-top: 20%;
     }
     body section.sidebar ul.menu {
-        margin-top: 30%;
+        margin-top: 20%;
     }
 }
 

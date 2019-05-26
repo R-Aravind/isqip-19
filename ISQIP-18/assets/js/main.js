@@ -242,7 +242,7 @@
 
 $(document).ready(function(){
   // Add smooth scrolling to all links
-  $("header a").on('click', function(event) {
+  $("header a").add(".banner-content a").on('click', function(event) {
 
     // Make sure this.hash has a value before overriding default behavior
     if (this.hash !== "") {

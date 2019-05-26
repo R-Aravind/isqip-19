@@ -5,6 +5,7 @@ main {
     position: relative;
     box-sizing: border-box;
     padding: 30px;
+    padding-bottom: 10px;
     width: 100%;
     max-width: 920px;
     background-color: #fff;
@@ -14,7 +15,6 @@ main {
     border-radius: 20px;
     font-family: 'montserrat';
     font-weight: 400;
-    
 }
 
 .topic {
@@ -60,15 +60,22 @@ main {
 
 div.faq-btn {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 5px;
 }
-div.faq-btn div a{
-  background-color: #e5451c;
-  color: white;
+div.faq-btn div{
+  color: #e5451c;
+  font-size: 1.8em;
   text-decoration: none;
-  padding: 10px 50px;
+  cursor: pointer;
 }
-
+div.faq-btn #faq-btn-prev{
+  text-align: left;
+  padding-left: 8%;
+}
+div.faq-btn #faq-btn-next{
+  text-align: right;
+  padding-right: 8%;
+}
 .page-number{
   text-align: center;
 }
@@ -131,11 +138,13 @@ div.faq-btn div a{
 
 
 @media only screen and (max-width: 480px) {
-  .question {
-    padding-right: 0px;
-  }
   main {
+    margin-top:10%;
     padding: 10px;
+  }
+  .question {
+    font-size: 0.9em;
+    padding-right: 0px;
   }
   .answer {
     margin-bottom: 30px;
