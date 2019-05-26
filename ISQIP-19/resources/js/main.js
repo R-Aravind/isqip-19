@@ -209,3 +209,8 @@ let pageScript = () => { // FAQ PAGE
     });
 };
 // //////////////
+
+// PRE PAGE LOADING SCRIPT
+let preScirpt = () =>{
+    
+}

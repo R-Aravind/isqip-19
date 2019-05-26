@@ -47,6 +47,7 @@ let Route = function(paths){
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            preScirpt();
             document.getElementById(update_id).innerHTML = this.responseText;
             pageScript();
         }
