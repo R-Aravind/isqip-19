@@ -207,10 +207,19 @@ let pageScript = () => { // FAQ PAGE
         console.log('ready');
         pageRevealerAnimationRemove.play();
     });
+
+    
 };
 // //////////////
 
 // PRE PAGE LOADING SCRIPT
 let preScirpt = () =>{
     
+}
+// Pre Request Script
+let preRequestScript = function (callback) {
+    
+    // script here
+
+    callback();
 }

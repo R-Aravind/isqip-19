@@ -65,7 +65,7 @@ let Route = function(paths){
         let target = pages.registeredPages[currentPath];
         if(target != undefined){
             xhttp.open("GET", target, true);
-            xhttp.send();
+            preRequestScript(()=>xhttp.send());
         }
         else{
             content.innerHTML = 'undefined';
