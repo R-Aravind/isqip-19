@@ -52,6 +52,7 @@ $(document).mouseup(function (e) {
 var textCurtains = null;
 var textToReveal = null;
 var textCurtainEffect = null;
+var pageRevealerAnimationRaise = null;
 // Page Scripts //
 let pageScript = () => { // FAQ PAGE
     $('.faq-question').click(function () {
@@ -62,9 +63,6 @@ let pageScript = () => { // FAQ PAGE
     /**
      * Contact page scripts
      */
-    // var contactBtn = $('.contact-btn');
-
-    
     console.log('yes it fires');
     // text curtain reveal animation
     textCurtains = document.getElementsByClassName('text-reveal-curtain');
@@ -94,9 +92,11 @@ let pageScript = () => { // FAQ PAGE
         scaleX: [1, 0]
     });
     $('.contact-container').ready(function(){
-        textCurtainEffect.play();
+        setTimeout(function () {
+            textCurtainEffect.play();
+        }, 500);
     });
-    
+
 
     // FAQ PAGE
 
@@ -126,7 +126,65 @@ let pageScript = () => { // FAQ PAGE
         $('.page-number').text(pageNumber(crt_faq_page, total_page));
     });
 
+    /**
+     * Page revealing animation
+     */
+    var pageRevealerElement = document.getElementsByClassName('page-revealer-element');
 
+    pageRevealerAnimationRemove = anime.timeline({
+        easing: 'easeInOutSine',
+        duration: 800,
+        delay: anime.stagger(100),
+        endDelay: 50,
+        autoplay: false
+    });
 
+    pageRevealerAnimationRemove
+    .add({
+        targets: pageRevealerElement,
+        scaleY: [1, 0],
+        complete: function () {
+            for (var i = 0; i < pageRevealerElement.length; ++i) {
+                pageRevealerElement[i].style.transformOrigin = 'left bottom'
+            }
+        },
+    })
+    .add({
+        targets: '#main',
+        translateY: ['2rem', '0rem'],
+        duration: 100,
+        opacity: [0, 1]
+    });
+
+    pageRevealerAnimationRaise = anime.timeline({
+        easing: 'easeInOutSine',
+        duration: 800,
+        delay: anime.stagger(100),
+        endDelay: 50,
+        autoplay: false
+    });
+
+    pageRevealerAnimationRaise
+    .add({
+        targets: pageRevealerElement,
+        scaleY: [0, 1],
+        complete: function () {
+            for (var i = 0; i < pageRevealerElement.length; ++i) {
+                pageRevealerElement[i].style.transformOrigin = 'left top'
+            }
+        }
+    });
+
+    // trigger page transition on clicking menu
+    $('.menu>li').click(function() {
+        console.log('load');
+        $('#main').css('opacity', 0);
+        pageRevealerAnimationRaise.play();
+    });
+
+    $('#main').ready(function() {
+        console.log('ready');
+        pageRevealerAnimationRemove.play();
+    });
 };
 // //////////////

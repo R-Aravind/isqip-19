@@ -60,6 +60,10 @@ body {
     background: url("../images/background/bg.png");
 }
 
+.wrapper {
+    z-index: 1;
+}
+
 body section.mob-topbar {
     display: none;
 }
@@ -144,6 +148,37 @@ body section.sidebar ul.menu li.ticket a {
     color: #e5451c;
     z-index: 1;
     font-weight: 600;
+}
+
+/* Page reveal animation styles start here */
+.page-revealer-element {
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-width: 0px;
+    transform-origin: left bottom;
+    transform: scaleY(1);
+    position: absolute;
+    left: 0;
+    width: 25%;
+    height: 100vh;
+    background: #242424;
+    z-index: 10;
+}
+
+.page-revealer-element:nth-of-type(2) {
+    left: 25%;
+    background: #242424;
+}
+
+.page-revealer-element:nth-of-type(3) {
+    left: 50%;
+    background: #e5451c;
+}
+
+.page-revealer-element:nth-of-type(4) {
+    left: 75%;
+    background: #e5451c;
 }
 
 /* Mobile Version */
