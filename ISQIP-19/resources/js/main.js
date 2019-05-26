@@ -100,6 +100,9 @@ let pageScript = () => { // FAQ PAGE
 
     // FAQ PAGE
 
+    //FAQ POP UP
+    //FAQ POPUP END
+
     // PAGINATION
     let crt_faq_page = 0;
     let total_page = $('.page').length;
@@ -125,6 +128,7 @@ let pageScript = () => { // FAQ PAGE
         $(`.page:eq(${crt_faq_page})`).show();
         $('.page-number').text(pageNumber(crt_faq_page, total_page));
     });
+    //PAGINATION END
 
     /**
      * Page revealing animation
