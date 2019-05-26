@@ -101,6 +101,23 @@ let pageScript = () => { // FAQ PAGE
     // FAQ PAGE
 
     //FAQ POP UP
+    $('.open').click(function(){
+        let question = $(this).children('.question').text();
+        let answer = $(this).children('.answer').text();
+        let $Popup = `<div class="faq-pop-wrapper">
+                        <div class="faq-pop-body">
+                            <div class="close-btn"><a><i class="fas fa-times"></i></a></div>
+                            <div class="faq-pop-question">${question}</div>
+                            <div class="faq-pop-answer">${answer}</div>
+                        </div>
+                    </div>`;
+        $('.overlay').show();
+        $('body').prepend($Popup);
+        $('.close-btn').click(()=> {
+            $('.faq-pop-wrapper').remove();
+            $('.overlay').hide();
+        });
+    });
     //FAQ POPUP END
 
     // PAGINATION

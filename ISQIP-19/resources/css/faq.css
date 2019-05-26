@@ -1,4 +1,5 @@
 /* FAQ pages */
+
 main {
     display: block;
     position: relative;
@@ -13,6 +14,7 @@ main {
     border-radius: 20px;
     font-family: 'montserrat';
     font-weight: 400;
+    
 }
 
 .topic {
@@ -73,13 +75,17 @@ div.faq-btn div a{
 
 /* FAQ POP UPs */
 .faq-pop-wrapper{
+  position: absolute;
+  left: 0;
+  right: 0;
   margin: 0%;
   padding: 0%;
   height: 100vh;
   display: flex;
   align-items: center;
+  z-index: 2;
 }
-.faq-pop-body{
+.faq-pop-body{ 
   max-width: 800px;
   width: 95%;
   margin: 0 auto; 
