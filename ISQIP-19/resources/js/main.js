@@ -54,7 +54,7 @@ var textCurtainEffect = null;
 // Page Scripts //
 let pageScript = () => {
     // trigger loading animation
-    $('#main').ready(function() {
+    $(window).ready(function() {
         pageRevealerLower.play();
     });
 
