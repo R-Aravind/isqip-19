@@ -19,22 +19,23 @@ $(document).ready(() => {
         }
     });
 
-    // side bar active change
-    $(window).on('hashchange load', () => {
-        let currentPage = window.location.hash.substring(1).slice(1);
-        if(currentPage != ''){
-            $('.menu li').removeClass('active');
-            $('.menu li div.selected').remove();
-            currentPage ='.' + currentPage + '-btn';
-            $(currentPage).append('<div class="selected"></div>');
-        }else{
-            $('.menu li').removeClass('active');
-            $('.menu li div.selected').remove();
-            $('.home-btn').append('<div class="selected"></div>');
-        }
-    });
-
 });
+
+// side bar active change
+$(window).on('hashchange load', () => {
+    let currentPage = window.location.hash.substring(1).slice(1);
+    if(currentPage != ''){
+        $('.menu li').removeClass('active');
+        $('.menu li div.selected').remove();
+        currentPage ='.' + currentPage + '-btn';
+        $(currentPage).append('<div class="selected"></div>');
+    }else{
+        $('.menu li').removeClass('active');
+        $('.menu li div.selected').remove();
+        $('.home-btn').append('<div class="selected"></div>');
+    }
+});
+
 $(document).mouseup(function (e) {
     if ($(window).width() < 575.98) {
         if (!$('.sidebar').is(e.target) && $('.sidebar').has(e.target).length === 0) {
