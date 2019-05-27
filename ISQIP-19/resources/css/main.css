@@ -58,6 +58,7 @@ page-title{
 /* Body */
 body {
     background: url("../images/background/bg.png");
+    overflow-y: scroll;
 }
 
 .wrapper {
@@ -158,7 +159,7 @@ body section.sidebar ul.menu li.ticket a {
     padding: 0;
     border-width: 0px;
     transform-origin: left bottom;
-    transform: scaleY(1);
+    transform: scaleY(1) scaleX(1);
     position: absolute;
     left: 0;
     width: 25%;
@@ -188,7 +189,7 @@ div.overlay{
     left: 0;
     top: 0;
     right: 0;
-    bottom: 0; 
+    bottom: 0;
     z-index: 1;
     width: 100%;
     height: 100%;

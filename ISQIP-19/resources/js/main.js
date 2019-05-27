@@ -2,7 +2,6 @@
 window.onload = () => Route({'': 'banner.html', '/contact': 'contact.html', '/faq': 'faq.html', '/isqip': 'isqip.html', '/ticket': 'ticket.html'});
 // ///
 
-
 // SIDE BAR MOBILE
 $(document).ready(() => {
     $('#sidebar-btn').click(() => {
@@ -52,9 +51,14 @@ $(document).mouseup(function (e) {
 var textCurtains = null;
 var textToReveal = null;
 var textCurtainEffect = null;
-var pageRevealerAnimationRaise = null;
 // Page Scripts //
-let pageScript = () => { // FAQ PAGE
+let pageScript = () => {
+    // trigger loading animation
+    $('#main').ready(function() {
+        pageRevealerLower.play();
+    });
+
+    // FAQ PAGE
     $('.faq-question').click(function () {
 
         $(this).next('.faq-answer').fadeToggle();
@@ -147,79 +151,66 @@ let pageScript = () => { // FAQ PAGE
     });
     //PAGINATION END
 
-    /**
-     * Page revealing animation
-     */
-    var pageRevealerElement = document.getElementsByClassName('page-revealer-element');
-
-    pageRevealerAnimationRemove = anime.timeline({
-        easing: 'easeInOutSine',
-        duration: 800,
-        delay: anime.stagger(100),
-        endDelay: 50,
-        autoplay: false
-    });
-
-    pageRevealerAnimationRemove
-    .add({
-        targets: pageRevealerElement,
-        scaleY: [1, 0],
-        complete: function () {
-            for (var i = 0; i < pageRevealerElement.length; ++i) {
-                pageRevealerElement[i].style.transformOrigin = 'left bottom'
-            }
-        },
-    })
-    .add({
-        targets: '#main',
-        translateY: ['2rem', '0rem'],
-        duration: 100,
-        opacity: [0, 1]
-    });
-
-    pageRevealerAnimationRaise = anime.timeline({
-        easing: 'easeInOutSine',
-        duration: 800,
-        delay: anime.stagger(100),
-        endDelay: 50,
-        autoplay: false
-    });
-
-    pageRevealerAnimationRaise
-    .add({
-        targets: pageRevealerElement,
-        scaleY: [0, 1],
-        complete: function () {
-            for (var i = 0; i < pageRevealerElement.length; ++i) {
-                pageRevealerElement[i].style.transformOrigin = 'left top'
-            }
-        }
-    });
-
-    // trigger page transition on clicking menu
-    $('.menu>li').click(function() {
-        console.log('load');
-        $('#main').css('opacity', 0);
-        pageRevealerAnimationRaise.play();
-    });
-
-    $('#main').ready(function() {
-        console.log('ready');
-        pageRevealerAnimationRemove.play();
-    });
-
-    
 };
 // //////////////
 
 // PRE PAGE LOADING SCRIPT
 let preScirpt = () =>{
-    
-}
-// Pre Request Script
-let preRequestScript = function (callback) {
-    
-    // script here
 
-    callback();
+}
+
+/**
+ * Page revealing animation
+ */
+let pageRevealerElement = document.getElementsByClassName('page-revealer-element');
+let pageRevealerRaise = anime.timeline({
+    easing: 'easeInOutSine',
+    duration: 500,
+    delay: anime.stagger(50),
+    endDelay: 50,
+    autoplay: false
+});
+pageRevealerRaise
+.add({
+    targets: pageRevealerElement,
+    scaleY: [0, 1],
+    complete: function() {
+        for (let i = 0; i < pageRevealerElement.length; ++i) {
+            pageRevealerElement[i].style.transformOrigin = 'left bottom';
+        }
+        console.log('complete raise');
+    }
+});
+
+let pageRevealerLower = anime.timeline({
+    easing: 'easeInOutSine',
+    duration: 500,
+    delay: anime.stagger(50),
+    endDelay: 50,
+    autoplay: false
+});
+pageRevealerLower
+.add({
+    targets: pageRevealerElement,
+    scaleY: [1, 0],
+    duration: 500,
+    complete: function() {
+        for (let i = 0; i < pageRevealerElement.length; ++i) {
+            pageRevealerElement[i].style.transformOrigin = 'left top';
+        }
+        console.log('complete lowering');
+    }
+});
+
+// Pre Request Script
+let preRequestScript = function (firstLoad, callback) {
+
+    // script here
+    if (firstLoad) {
+        callback();
+    }
+    else {
+        pageRevealerRaise.play();
+        pageRevealerRaise.finished.then(callback);
+    }
 }
