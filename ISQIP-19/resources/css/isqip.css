@@ -89,12 +89,12 @@
         border-radius: 10px;
     }
     
-    .card-label{
-        position: absolute;
-        bottom: 4%;
-        color: #242424;
-        width: 100%;
-        text-align: center;
+    .card-body{
+        top: 0px;
     }
+    .branch-card:hover .card-body{
+        top: 0px;
+    }
+    
         
 }
