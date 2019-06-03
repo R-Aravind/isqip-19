@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>ISQIP</title>
-  <meta name="author" content="iThemesLab">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
@@ -506,6 +505,104 @@
 </head>
 
 <body>
+  <style>
+    main {
+      display: block;
+      position: relative;
+      box-sizing: border-box;
+      padding: 30px;
+      width: 100%;
+      max-width: 920px;
+      background-color: #fff;
+      margin: 0 auto;
+      margin-top: 50px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .topic {
+      padding: 20px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      border-bottom: solid 1px #ebebeb;
+    }
+
+    .open {
+      cursor: pointer;
+      display: block;
+      padding: 0px;
+    }
+
+    .open:hover {
+      opacity: 0.7;
+    }
+
+    .expanded {
+      background-color: #f5f5f5;
+      transition: all .3s ease-in-out;
+    }
+
+    .question {
+      padding-top: 30px;
+      padding-right: 40px;
+      padding-bottom: 20px;
+      font-size: 18px;
+      font-weight: 500;
+      color: #666;
+    }
+
+    .answer {
+      font-size: 16px;
+      line-height: 26px;
+      display: none;
+      margin-bottom: 30px;
+      text-align: justify;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .faq-t {
+      -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      display: inline-block;
+      float: right;
+      position: relative;
+      top: -55px;
+      right: 10px;
+      width: 10px;
+      height: 10px;
+      background: transparent;
+      border-left: 2px solid #ccc;
+      border-bottom: 2px solid #ccc;
+      transition: all .3s ease-in-out;
+    }
+
+    .faq-o {
+      top: -50px;
+      -moz-transform: rotate(-224deg);
+      -ms-transform: rotate(-224deg);
+      -webkit-transform: rotate(-224deg);
+      transform: rotate(-224deg);
+    }
+
+    @media only screen and (max-width: 480px) {
+      .faq-t {
+        display: none;
+      }
+      .question {
+        padding-right: 0px;
+      }
+      main {
+        padding: 10px;
+      }
+      .answer {
+        margin-bottom: 30px;
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+  </style>
   <!--Preloder-->
   <div class='loader'>
     <div class='loader--dot'></div>
@@ -556,42 +653,41 @@
           <div class="col-lg-8">
             <nav class="navbar navbar-expand-lg">
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                              <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
-                            </button>
+                            <span class="navbar-toggler-icon"><i class="fa fa-bars"></i></span>
+                          </button>
 
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
 
                   <li class="nav-item">
-                    <a class="nav-link " href="index.html" font-size=>Home</a>
+                    <a class="nav-link " href="index.html">Home</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#">ISQIP</a>
-                    <ul class="dropdown-menu animation  slideUpIn" style="display: none;">
-                      <li>
-                        <a href="CSISQIP.html">CS</a>
-                      </li>
-                      <li>
-                        <a href="ECISQIP.html">EC</a>
-                      </li>
-                      <li>
-                        <a href="EEEISQIP.html">EE</a>
-                      </li>
-                      <li>
-                        <a href="EIISQIP.html">EI</a>
-                      </li>
-                    </ul>
-                  </li>
-              <!--    <li class="nav-item ">
-                    <a class="nav-link dynamicLinks" id="speakersLink" href="#selectISQIP">Speakers</a>
+                                      <a class="nav-link dropdown-toggle" href="#">ISQIP</a>
+                                      <ul class="dropdown-menu animation  slideUpIn" style="display: none;">
+                                          <li>
+                                              <a href="CSISQIP.html">CS</a>
+                                          </li>
+                                          <li>
+                                              <a href="ECISQIP.html">EC</a>
+                                          </li>
+                                          <li>
+                                              <a href="EEEISQIP.html">EE</a>
+                                          </li>
+                                          <li>
+                                              <a href="EIISQIP.html">EI</a>
+                                          </li>
+                                      </ul>
+                                  </li>
+                <!--  <li class="nav-item ">
+                    <a class="nav-link " href="#speakers">Speakers</a>
                   </li>
                   <li class="nav-item ">
-                    <a class="nav-link dynamicLinks" id="scheduleLink" href="#selectISQIP">Schedule</a>
+                    <a class="nav-link " href="#schedule">Schedule</a>
                   </li> -->
                   <li class="nav-item ">
                     <a class="nav-link " href="faq.html">FAQ</a>
 
-                  </li>
                   </li>
                   <li class="nav-item ">
                     <a class="nav-link " href="code-of-conduct.html">Code of Conduct</a>
@@ -610,7 +706,7 @@
           <div class="col-lg-2 d-none d-lg-block">
             <ul>
               <li class="header-ticket">
-                <a class="pr-0" href="#selectISQIP">Buy Ticket</a>
+                <a class="pr-0" href="#tickets">Buy Ticket</a>
               </li>
             </ul>
           </div>
@@ -622,206 +718,98 @@
     </header>
     <!--Header End Here-->
 
-    <!--Hero Banner Area Start Here-->
-    <div id="home" class="hero-banner-area home-2 hero-bg-2 parallax no-attm">
+    <!--About Us Area Start Here-->
+    <div class="about-us-area pad-head bg-about">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <div class="banner-content">
-              <h2 style="color:black">We're back with a bang!</h2>
-              <p style="color:#666">6-12 July 2019 with over 15 workshops - College of Engineering, Chengannur</p>
-
-              <!-- <div class="upcoming">
-
-                <span class="is-countdown"> </span>
-                <div data-countdown="2018/07/10"></div>
-
-              </div> -->
-              <div class="primary-btn text-center d-md-none">
-                <a href="#selectISQIP" class="btn-primary">Buy Tickets</a>
+            <div class="about-content">
+              <div class="section-title text-center">
+                <h2 style="color:#666">Code of Conduct</h2>
               </div>
+              <ol class="breadcrumb">
+                <li><a href="index.html">Home </a></li>
+                <li style="color:#666">| Code of Conduct</li>
+              </ol>
             </div>
           </div>
-          <!-- /col end-->
+          <!-- /col-->
         </div>
-        <!-- /row end-->
+        <!-- /row-->
       </div>
-      <!-- /container end-->
+      <!--/ container-->
     </div>
-    <!--Hero Banner Area End Here-->
+    <!--About Us Area End Here-->
 
-    <!--Counter Up Area Start Here-->
-    <div id="event" class="counter-up-area pad100 bg-counter parallax">
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3">
-            <div class="single-counter xs-mb40">
-              <div class="count-content">
-                <span class="count">250</span>
-                <p>Delegates</p>
-              </div>
-            </div>
-          </div>
-           <!--/col end-->
-          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3">
-            <div class="single-counter xs-mb40">
-              <div class="count-content">
-                <span class="count">20</span>
-                <p>Speakers</p>
-              </div>
-            </div>
-          </div>
-           <!--/col end-->
-          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-3">
-            <div class="single-counter xs-mb40">
-              <div class="count-content">
-                <span class="count">15</span>
-                <p>Workshops</p>
-              </div>
-            </div>
-          </div>
-           <!--/col end-->
-          <div class="col-xl-3 col-lg-3 d-md-none d-lg-block col-sm-3">
-            <div class="single-counter">
-              <div class="count-content">
-                <span class="count">7</span>
-                <p>Days</p>
-              </div>
-            </div>
-          </div>
-           <!--/col end-->
-        </div>
-         <!--/row end-->
-      </div>
-       <!--/container end-->
-    </div>
-    <!--Counter Up Area End Here-->
-
+    <!--Conference Synopsis Area Start Here-->
     <div class="container">
-      <div class="row info-row">
-        <div class="col-lg-6">
-          <img class="block-img" src="assets/img/feature/1.png" alt="">
-        </div>
-        <div class="col-lg-6">
-          <div class="generel-information-area">
-            <div class="inner-content">
-              <h2>Feed your curiosity by getting to know ISQIP!</h2>
-              <p>ISQIP is a week-long internship training program offering both technical and managerial sessions, for the overall development of the student during the summer vacation.</p>
+    	
+    <div class="col-lg-12 ">
+    	<div class="section-title text-center">
+    			<br><br>
 
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--row end-->
-      <div class="row info-row">
-        <div class="col-lg-6">
-          <div class="generel-information-area">
-            <div class="inner-content">
-              <h2>ISQIP - The answer to all your technical doubts! </h2>
-              <p>ISQIP is aimed to aid the students to envisage an industrial approach towards their field of study by paving them a way to get their hands on internship opportunities by leading startups and firms in Kerala.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6">
-          <img class="block-img" src="assets/img/feature/3.png" alt="">
-        </div>
-      </div>
-      <!--row end-->
-      <div class="row info-row">
-        <div class="col-lg-6">
-          <img class="block-img" src="assets/img/feature/2.png" alt="">
-        </div>
-        <div class="col-lg-6">
-          <div class="generel-information-area">
-            <div class="inner-content">
-              <h2>Every tech enthusisast finds a place here!</h2>
-              <p>ISQIP is conducted for the students belonging to various branches of study and is organised as CS ISQIP, EC ISQIP , EI ISQIP and EEE ISQIP.</p>
+    			<p class="text-justify">Welcome to ISQIP 2019! We are the coordinators and delegates of the IEEE Student Quality Improvement Programme, hosted by IEEE Student Branch Chapter College of Engineering Chengannur. We are a peer group of tech enthusiasts, joining hands for this programme to seek out more knowledge from competent mentors and to spread out our knowledge to yearning members. We strive to strengthen the collaborative culture among the young minds. This is a platform for all aspiring individuals who are keen to share their knowledge for the community.</p>
+    			<br>
+    			<p class="text-justify">
+				ISQIP is a platform which connects different individuals under the shared passion and interest for acquiring more skills in the various fields. Whenever you talk, post or reply, there are other people hearing you or sitting behind the screen reading what you say. These other people have thoughts, ideas, dreams, aspirations, troubles, advice, perspectives, feelings, and experiences, just like you. You'll probably end up meeting a lot of them and sharing your interests when you participate in the Hackathon, at the end of ISQIP 2019. Everyone in this group and people you meet through the programme, are a potential new friend - treat them that way.
+				</p><br>
+				<p class="text-justify">This document aims to make ISQIP as a forum for everyone to feel welcome. The rules, guidelines, and code of conduct that follow apply to all the members, volunteers and participants. This isn't an exhaustive list of things that you can't do. Rather, take it in the spirit in which it's intended — a guide to make it easier to be excellent to each other. We expect it to be followed in spirit as much as in the letter.</p>
+				<br><br>
 
-            </div>
-          </div>
-        </div>
-      </div>
+
+				<h3 class="text-left">Be considerate</h3><br>
+				<p class="text-justify">Any decision you take will affect other members and colleagues, and you should take those consequences into account when making decisions. Try to make decisions that are as inclusive as possible.</p><br>
+
+
+				<h3 class="text-left">Be respectful</h3><br>
+				<p class="text-justify">Not all of us will agree all the time, but disagreement is no excuse for poor behavior and poor manners. We might all experience some frustration now and then, but we cannot allow that frustration to turn into a personal attack. It's important to remember that a technical community where people feel uncomfortable or threatened is not a productive one. We expect members of the programme to be respectful when communicating with other members.</p><br>
+
+
+				<h3 class="text-left">Be Collaborative</h3><br>
+				<p class="text-justify">What we produce is a complex whole made of many parts, it is the sum of many dreams. Collaboration between teams that each have their own goal and vision is essential; for the whole to be more than the sum of its parts, each part must make an effort to understand the whole. Collaboration reduces redundancy and improves the quality of our work.</p><br>
+
+
+				<h3 class="text-left">Be nice and do not harass others</h3><br>
+				<p class="text-justify">Everyone in this programme should feel welcome, regardless of their background. Please be courteous, respectful and polite to fellow community members. Any complaints regarding any of the following will be taken seriously and may result in removing from the event.
+				</p><br>
+
+				<h4 class="text-left">Harassment includes:</h4><br>
+				<ul class="text-justify" style="list-style-type:disc;">
+					<li>Offensive comments related to gender, gender identity and expression, sexual orientation, disability, mental illness, physical appearance, body size, race, or religion.</li>
+					<li>Gratuitous or off-topic sexual images or behaviour in spaces where they’re not appropriate.</li>
+					<li>Physical contact and simulated physical contact through texts without consent or after a request to stop.</li>
+					<li>Threats of violence.</li>
+					<li>Incitement of violence towards any individual, including encouraging a person to commit suicide or to engage in self-harm.</li>
+					<li>Deliberate intimidation.</li>
+					<li>Stalking or Following.</li>
+					<li>Harassing photography or recording, including logging online activity for harassment purposes.</li>
+					<li>Sustained disruption of discussion.</li>
+					<li>Unwelcome sexual attention, i.e. members should not use sexualized clothing/uniforms/costumes, or otherwise create a sexualized environment.</li>
+					<li>Pattern of inappropriate social contact, such as requesting/assuming inappropriate levels of intimacy with others.</li>
+					<li>If asked to stop any harassing behavior, you are expected to comply immediately. If a participant/member engages in harassing behavior, the organizers may take any action they deem appropriate, including warning the offender or expulsion from the event.</li>
+					<li>If you are being harassed, notice that someone else is being harassed, or have any other concerns, please contact the core organizing committee, whose contact details are given below at the end of this document.</li>
+					<li>Organizers will be happy to help participants/members contact security or local law enforcement, provide escorts to an alternate location, or otherwise assist those experiencing harassment to feel safe for the duration of the meetup. We value your attendance.</li>
+				</ul><br>
+				<p class="text-justify">We expect participants to follow these rules at our all of our event venues and event-related social events.</p><br>
+
+				<h3 class="text-left">Communicate effectively</h3><br>
+				<p class="text-justify">Clear communication can help to avoid misunderstandings, Having context is important. It's better to ask for clarification than to make assumptions. Disagreements, social and technical, are normal, but we expect members in the community to resolve disagreements constructively — so please avoid trolling, personal attacks, and repetitive arguments.
+				</p><br>
+				<h3 class="text-left">Unaffiliated Promotions</h3><br>
+				<p class="text-justify">Any promotions which are not directly affiliated to the programme should be completely avoided. If found continuing even after asked to stop, may result in removal from the event. All the members/organizers/sponsors/participants shall ask permission with concerned people mentioned at the end of the document to carry-out any promotions within the discussion rooms or events.
+				</p><br>
+				<h3 class="text-left">When we disagree, try to understand why.</h3><br>
+				<p class="text-justify">Disagreements, both social and technical, happen all the time. It is important that we resolve disagreements and differing views constructively. Remember that we’re different. The strength of the programme comes from its varied community, people from a wide range of backgrounds. Different people have different perspectives on issues. Being unable to understand why someone holds a viewpoint doesn’t mean that they’re wrong. Focus on helping to resolve issues and learning from mistakes. It is important that we resolve disagreements and differing views constructively and with the help of the community and community processes.When our goals differ dramatically, we encourage the creation of alternative implementations, so that the community can test new ideas and contribute to the discussion.
+				</p><br>
+				<h3 class="text-left">Go by This</h3><br>
+				<p class="text-justify">If any member is unwilling to abide by this Code of Conduct or breaks it, he/she shall be removed from their current activity. The person will be removed from the event and will not be allowed to participate or contribute to any further activity whatever his designation be.
+				</p><br>
+
     </div>
-
-    <!-- SELECT ISQIP -->
-    <div class="primary-btn2 text-center" style="padding:40px 0px;" id="selectISQIP"><br>
-      <div class="section-title text-center">
-        <div class="title-text mb50 xs-mb40">
-          <h2>Select Stream</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-sm-6 col-md-6 col-xs-6">
-          <a class="btn-primary2" id="loadCSISQIP" href="CSISQIP.html"><img src="assets/img/feature/cs.png" style="height:150px;"><br><p>CS</p></a>
-
-        </div>
-        <div class="col-lg-3 col-sm-6 col-md-6 col-xs-6">
-          <a class="btn-primary2" id="loadECISQIP" href="ECISQIP.html"><img src="assets/img/feature/ec.png" style="height:150px;"><br><p>EC</p></a>
-
-        </div>
-        <div class="col-lg-3 col-sm-6 col-md-6 col-xs-6">
-          <a class="btn-primary2" id="loadEEEISQIP" href="EEEISQIP.html"><img src="assets/img/feature/eee.png" style="height:150px;"><br><p>EEE</p></a>
-
-        </div>
-        <div class="col-lg-3 col-sm-6 col-md-6 col-xs-6">
-          <a class="btn-primary2" id="loadEIISQIP" href="EIISQIP.html"><img src="assets/img/feature/ei.png" style="height:150px;"><br><p>EI</p></a>
-
-        </div>
-
-      </div>
-    </div>
-
-
-
-    <!--Our Sponsors Area Start Here-->
-    <div class="our-sponsers-area-tow pad100 bg-color">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="section-title text-center">
-              <div class="title-text mb50 xs-mb40">
-                <h2>Our Sponsors</h2>
-              </div>
-            </div>
-          </div>
-          <!-- /col end-->
-        </div>
-        <!-- /row end-->
-        <!-- Remove This line for Sponsors
-        <div class="row">
-          <div class="sponsers-active owl-carousel owl-theme">
-            <div class="col-lg-12">
-              <div class="single-sponsers">
-                <a href="#"><img src="assets/img/sponsers/1.png" alt=""></a>
-              </div>
-              <div class="boder"></div>
-              <div class="single-sponsers">
-                <a href="#"><img src="assets/img/sponsers/2.png" alt=""></a>
-              </div>
-            </div>
-            <div class="col-lg-12">
-              <div class="single-sponsers">
-                <a href="#"><img src="assets/img/sponsers/3.png" alt=""></a>
-              </div>
-              <div class="boder"></div>
-              <div class="single-sponsers">
-                <a href="#"><img src="assets/img/sponsers/4.png" alt=""></a>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-lg-12">
-            <div class="primary-btn text-center">
-              <a href="assets/Sponsorship-Brochure.pdf" class="btn-primary">Become Sponsor</a>
-            </div>
-          </div>
-
-        </div>
-        <!-- /row end-->
-      </div>
-      <!-- /container end-->
-    </div>
-    <!--Our Sponsors Area End Here-->
+    
+     </div>
+ </div>
+    <!--Conference Synopsis Area End Here-->
 
     <!--Contact Us Area Start Here-->
     <div id="contactus" class="contact-us-area-two pad-top100 bg-contact parallax no-attm">
@@ -878,6 +866,7 @@ height: 91%;
       <!-- /container end-->
     </div>
     <!--Contact Us Area End Here-->
+
 
     <!--Footer Area Start Here-->
     <div class="footer-area bg-footer parallax ptb">
@@ -936,8 +925,10 @@ height: 91%;
       <!-- /container end-->
     </div>
     <!--Footer Area End Here-->
+
   </div>
   <!--Main Container End Here-->
+
   <!--All Js Here-->
   <!-- Google Map js -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlUJtsIi_FRurx0i2WUGoxf_KaNoHmc4o"></script>
@@ -971,6 +962,28 @@ height: 91%;
 
   <!-- template main js file -->
   <script src="assets/js/main.js"></script>
+
+  <script type="text/javascript">
+    $(".open").click(function() {
+      var container = $(this).parents(".topic");
+      var answer = container.find(".answer");
+      var trigger = container.find(".faq-t");
+
+      answer.slideToggle(200);
+
+      if (trigger.hasClass("faq-o")) {
+        trigger.removeClass("faq-o");
+      } else {
+        trigger.addClass("faq-o");
+      }
+
+      if (container.hasClass("expanded")) {
+        container.removeClass("expanded");
+      } else {
+        container.addClass("expanded");
+      }
+    });
+  </script>
 </body>
 
 </html>
