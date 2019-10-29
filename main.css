@@ -19,9 +19,9 @@
 }
 
 img {
-    padding: 20px;
-    height: 50px;
-    width: 180px;
+    padding: 30px;
+    height: 54px;
+    width: 190px;
 }
 
 .content {
@@ -45,8 +45,8 @@ img {
 /* FOR MOBILE */
 @media only screen and (max-width: 700px) {
     img {
-        padding: 20px;
-        height: 25px;
+        padding: 22px;
+        height: 27px;
         width: 90px;
     }
 
